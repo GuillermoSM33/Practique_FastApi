@@ -1,1 +1,0 @@
-# Practique_FastApi
