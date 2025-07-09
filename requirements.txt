@@ -1,0 +1,32 @@
+# FastAPI y servidor ASGI
+fastapi
+uvicorn[standard]
+
+# OCR
+pytesseract
+Pillow               # para manipular imágenes (requerido por pytesseract)
+
+# Procesamiento de texto y NLP
+scikit-learn
+nltk
+spacy
+
+# Modelo de lenguaje preentrenado 
+
+# transformers
+
+# Utilidades generales
+python-multipart     # para recibir archivos
+python-dotenv        # para cargar variables desde .env
+pydantic             
+
+# Base de datos (ejemplo con SQLite o PostgreSQL)
+
+# sqlalchemy
+# databases[sqlite]    
+
+# Validación y carga de archivos
+python-magic-bin     # detectar tipo MIME de archivos
+
+# Jupyter 
+notebook

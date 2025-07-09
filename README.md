@@ -15,6 +15,51 @@ El usuario simplemente subirá un documento, y la aplicación se encargará de:
 
 ---
 
+# Cómo instalarlo
+
+1. Clona el repositorio
+
+```
+git clone https://github.com/GuillermoSM33/Practique_FastApi.git
+cd FASTAPI_PROYECTO
+
+```
+
+2. Instala las dependencias
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+# Entorno Virtual
+
+Se recomienda usar el entorno virtual para aislar las dependencias del proyecto 
+
+```
+# Crear entorno virtual
+python -m venv .venv
+
+# Activarlo en Windows
+.\.venv\Scripts\activate
+
+# Activarlo en Unix/Mac
+source .venv/bin/activate
+```
+
+---
+
+# Uvicorn
+
+Una vez activado el entorno virtual e instaladas las dependencias, ejecuta el siguiente comando desde la raíz del proyecto para iniciar el servidor FastAPI:
+
+```
+uvicorn app.main:app --reload
+```
+
+---
+
 # Estructura del Proyecto
 
 ```
