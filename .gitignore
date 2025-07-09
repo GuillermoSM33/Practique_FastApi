@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.log
+
+# Entorno virtual
+.venv/
+venv/
+ENV/
+env/
+
+# Archivos de configuración local
+.env
+.env.*
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de Jupyter Notebook
+.ipynb_checkpoints/
+
+# Archivos de tests y cobertura
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+pytest_cache/
+test-results/
+
+# Modelos de ML o serializados
+*.pkl
+*.joblib
+*.h5
+
+# Bases de datos temporales o archivos de prueba
+*.sqlite3
+*.db
+
+# Otros archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
