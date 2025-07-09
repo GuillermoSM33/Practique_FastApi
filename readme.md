@@ -1,7 +1,6 @@
 # Archivero Digital Inteligente
 
 ## Objetivo:
-
 Este proyecto tiene como finalidad desarrollar un sistema inteligente de archivo documental. A través del análisis de datos y procesamiento de texto, el sistema será capaz de identificar automáticamente el tipo de documento cargado por el usuario, clasificarlo y organizarlo dentro de su repositorio correspondiente.
 
 El usuario simplemente subirá un documento, y la aplicación se encargará de:
@@ -16,7 +15,7 @@ El usuario simplemente subirá un documento, y la aplicación se encargará de:
 
 ---
 
-# Estructura Del Proyecto
+# Estructura del Proyecto
 
 Archivero/
 │
@@ -24,48 +23,48 @@ Archivero/
 │   ├── api/                         # Endpoints HTTP
 │   │   └── v1/
 │   │       ├── endpoints/
-│   │       │   ├── documents.py     # Subida, Clasificación, Listar Documentos
-│   │       │   └── health.py        # El proyecto está corriendo?
-│   │       └── router.py            # Incluye todos los endpoints
+│   │       │   ├── documents.py     # Subida, clasificación y consulta de documentos
+│   │       │   └── health.py        # Verificación del estado del sistema (health check)
+│   │       └── router.py            # Enrutador principal de la API
 │   │
-│   ├── core/                        # Configuración central (settings, logger)
-│   │   ├── config.py                # Variables de entorno y configuración
-│   │   └── logger.py
+│   ├── core/                        # Configuración central y utilidades base
+│   │   ├── config.py                # Variables de entorno y parámetros globales
+│   │   └── logger.py                # Configuración de logs del sistema
 │   │
-│   ├── models/                      # Modelos de base de datos
-│   │   └── document.py              # Documento, tipo, metadatos, etc.
+│   ├── models/                      # Modelos de base de datos (ORM)
+│   │   └── document.py              # Representación del documento y sus metadatos
 │   │
-│   ├── schemas/                     # Esquemas Pydantic (entrada/salida)
-│   │   └── document.py
+│   ├── schemas/                     # Esquemas Pydantic para validación de datos
+│   │   └── document.py              # Esquemas de entrada/salida de documentos
 │   │
-│   ├── services/                    # Lógica de negocio / servicios
-│   │   └── classifier_service.py    # Clasificación por IA
+│   ├── services/                    # Lógica de negocio
+│   │   └── classifier_service.py    # Clasificación de documentos mediante IA
 │   │
-│   ├── utils/                       # OCR, procesamiento de texto, etc.
-│   │   ├── ocr.py                   # pytesseract o Google Vision
-│   │   ├── preprocess.py            # Limpieza y normalización de texto
-│   │   └── vectorizer.py            # TF-IDF o embeddings
+│   ├── utils/                       # Utilidades auxiliares
+│   │   ├── ocr.py                   # Extracción de texto (Tesseract, Vision API, etc.)
+│   │   ├── preprocess.py            # Limpieza y normalización del texto
+│   │   └── vectorizer.py            # Vectorización del texto (TF-IDF, BERT, etc.)
 │   │
-│   ├── repository/                 # Acceso a datos (ORM o manual SQL)
-│   │   └── document_repo.py
+│   ├── repository/                  # Acceso a la base de datos
+│   │   └── document_repo.py         # Consultas y operaciones sobre documentos
 │   │
-│   ├── ml/                          # Carpeta para modelos ML entrenados
-│   │   ├── model.pkl                # Modelo de clasificación entrenado
-│   │   └── vectorizer.pkl           # Vectorizador TF-IDF u otro
+│   ├── ml/                          # Modelos de machine learning entrenados
+│   │   ├── model.pkl                # Modelo de clasificación
+│   │   └── vectorizer.pkl           # Vectorizador usado en el entrenamiento
 │   │
-│   ├── main.py                      # Punto de entrada FastAPI
-│   └── deps.py                      # Dependencias para inyección (DB, etc.)
+│   ├── main.py                      # Punto de entrada de la aplicación FastAPI
+│   └── deps.py                      # Dependencias inyectables (DB, servicios, etc.)
 │
-├── tests/                           # Pruebas unitarias y de integración
+├── tests/                           # Pruebas unitarias e integración
 │   ├── test_documents.py
 │   └── test_classifier.py
 │
-├── data/                            # Documentos de ejemplo / entrenamiento
+├── data/                            # Datos de entrenamiento y ejemplos
 │   └── sample_docs/
 │
-├── notebooks/                       # Experimentos en Jupyter
+├── notebooks/                       # Experimentos, prototipos y análisis exploratorio
 │   └── classifier_experiment.ipynb
 │
-├── .env                             # Configuración de entorno
-├── requirements.txt                 # Dependencias
-├── README.md
+├── .env                             # Variables de entorno (local)
+├── requirements.txt                 # Lista de dependencias del proyecto
+├── README.md                        # Descripción general del proyecto
