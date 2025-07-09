@@ -17,6 +17,7 @@ El usuario simplemente subirá un documento, y la aplicación se encargará de:
 
 # Estructura del Proyecto
 
+```
 Archivero/
 │
 ├── app/
@@ -68,3 +69,4 @@ Archivero/
 ├── .env                             # Variables de entorno (local)
 ├── requirements.txt                 # Lista de dependencias del proyecto
 ├── README.md                        # Descripción general del proyecto
+```
