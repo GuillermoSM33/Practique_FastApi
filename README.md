@@ -1,6 +1,7 @@
 # Archivero Digital Inteligente
 
 ## Objetivo:
+
 Este proyecto tiene como finalidad desarrollar un sistema inteligente de archivo documental. A través del análisis de datos y procesamiento de texto, el sistema será capaz de identificar automáticamente el tipo de documento cargado por el usuario, clasificarlo y organizarlo dentro de su repositorio correspondiente.
 
 El usuario simplemente subirá un documento, y la aplicación se encargará de:
@@ -35,7 +36,7 @@ pip install -r requirements.txt
 
 # Entorno Virtual
 
-Se recomienda usar el entorno virtual para aislar las dependencias del proyecto 
+Se recomienda usar el entorno virtual para aislar las dependencias del proyecto
 
 ```
 # Crear entorno virtual
@@ -49,14 +50,24 @@ source .venv/bin/activate
 ```
 
 ---
+# Docker
 
-# Uvicorn
+También puedes ejecutar la aplicación usando Docker (basado en Ubuntu):
 
-Una vez activado el entorno virtual e instaladas las dependencias, ejecuta el siguiente comando desde la raíz del proyecto para iniciar el servidor FastAPI:
+1. Construye la imagen Docker desde la raíz del proyecto:
 
-```
-uvicorn app.main:app --reload
-```
+   ```bash
+   docker build -t practique_fastapi .  #el punto es importante se debe de copiar
+   ```
+
+2. Ejecuta el contenedor exponiendo el puerto 8000:
+   ```bash
+   docker run -p 8000:8000 practique_fastapi
+   ```
+
+Esto levantará el servidor FastAPI en `http://localhost:8000` dentro de un contenedor Ubuntu con todas las dependencias necesarias (incluyendo Tesseract para OCR).
+
+Si necesitas montar archivos locales o usar variables de entorno, puedes agregar opciones a los comandos de Docker según tu caso de uso.
 
 ---
 
